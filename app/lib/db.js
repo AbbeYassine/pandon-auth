@@ -15,7 +15,6 @@ module.exports = function(app) {
     }
   });
 
-  // mongoose.set('debug', true);
 
   return mongoose;
 };
