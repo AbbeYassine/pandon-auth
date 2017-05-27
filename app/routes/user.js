@@ -17,13 +17,14 @@ module.exports = {
         }, function (err, user) {
             console.log(user);
             if (user) {
-                res.json({success: false, message: "User exist"});
+                res.status(403)
+                    .send({success: false, message: "User exist"});
             } else {
                 User.create(req.body, function (err, user) {
                     console.log(user);
                     console.log(err);
                     if (err) {
-                        res.status(402).send(err);
+                        res.status(402).send({success: false, message: "erreur technique", data: err});
                         return;
                     }
                     var token = jwt.sign(user, app.get("superSecret"), {

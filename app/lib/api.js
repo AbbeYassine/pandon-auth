@@ -65,8 +65,9 @@ tokenRouter.use(function (req, res, next) {
 
 
 /*************Routes ***************/
+router.route("/user/register")
+    .post(users.register);
 router.route("/users")
-    .post(users.register)
     .delete(users.removeAll);
 router.route("/user/login")
     .post(users.login);

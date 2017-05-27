@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 # Install app dependencies in build server (jenkins)
 #COPY package.json /usr/src/app/
-#RUN npm install
+RUN npm install
 
 # Bundle app source
 COPY . /usr/src/app
